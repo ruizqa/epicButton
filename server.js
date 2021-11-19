@@ -42,10 +42,9 @@ let server = app.listen(1750, function() {
 });
 
 const io = require('socket.io')(server);
-
+let number =0;
 
 io.on('connection', function (socket) { //2
-    let number =0;
     function sendNumber(number){
         io.sockets.emit('number', { number: number }); //3
     }
